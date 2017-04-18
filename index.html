@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>♥ Love ♥</title>
+
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./library/angular-material/angular-material.min.css">
+</head>
+
+<body ng-app="index">
+    <div ng-controller="AppCtrl" ng-cloak>
+        Item 1
+        <md-slider-container>
+            <md-slider flex ng-model="rating.rating1" min="0" max="100" aria-label="blue">
+            </md-slider>
+            <md-input-container>
+                <input flex type="number" ng-model="rating.rating1" aria-label="blue" aria-controls="blue-slider">
+            </md-input-container>
+        </md-slider-container>
+
+        Item 2
+        <md-slider-container>
+            <md-slider flex ng-model="rating.rating2" min="0" max="100" aria-label="blue">
+            </md-slider>
+            <md-input-container>
+                <input flex type="number" ng-model="rating.rating2" aria-label="blue" aria-controls="blue-slider">
+            </md-input-container>
+        </md-slider-container>
+    </div>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="./library/angular/angular.min.js"></script>
+    <script src="./library/angular-animate/angular-animate.min.js"></script>
+    <script src="./library/angular-aria/angular-aria.min.js"></script>
+    <script src="./library/angular-messages/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="./library/angular-material/angular-material.min.js"></script>
+
+    <script src="./index.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
