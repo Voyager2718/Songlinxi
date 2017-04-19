@@ -19,7 +19,7 @@ angular.module('index', ['ngMaterial'])
 
         $scope.show = function () {
             $scope.showcard = true;
-            $scope.blur = 'blur(5px)';
+            $scope.blur = 'blur(15px)';
         }
 
         $scope.cancel = function () {
@@ -27,3 +27,9 @@ angular.module('index', ['ngMaterial'])
             $scope.blur = 'none';
         }
     });
+
+var title = '♥~~~♥~~~♥~~~♥~~~'
+setInterval(function () {
+    title = title.substr(1) + title.substr(0, 1);
+    document.title = "♥ Love ♥ " + title;
+}, 250);
