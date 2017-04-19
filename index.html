@@ -15,28 +15,104 @@
 
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./library/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
-<body ng-app="index">
-    <div ng-controller="AppCtrl" ng-cloak>
-        Item 1
-        <md-slider-container>
-            <md-slider flex ng-model="rating.rating1" min="0" max="100" aria-label="blue">
-            </md-slider>
-            <md-input-container>
-                <input flex type="number" ng-model="rating.rating1" aria-label="blue" aria-controls="blue-slider">
-            </md-input-container>
-        </md-slider-container>
+<body ng-app="index" ng-controller="AppCtrl">
+    <div ng-cloak>
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="评分">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">评分</h1>
+                        <div ng-cloak>
+                            喜欢
+                            <md-slider-container>
+                                <md-slider flex ng-model="rating.love" min="0" max="100" aria-label="blue">
+                                </md-slider>
+                                <md-input-container>
+                                    <input flex type="number" ng-model="rating.love" aria-label="blue" aria-controls="blue-slider">
+                                </md-input-container>
+                            </md-slider-container>
 
-        Item 2
-        <md-slider-container>
-            <md-slider flex ng-model="rating.rating2" min="0" max="100" aria-label="blue">
-            </md-slider>
-            <md-input-container>
-                <input flex type="number" ng-model="rating.rating2" aria-label="blue" aria-controls="blue-slider">
-            </md-input-container>
-        </md-slider-container>
+                            生活
+                            <md-slider-container>
+                                <md-slider flex ng-model="rating.life" min="0" max="100" aria-label="blue">
+                                </md-slider>
+                                <md-input-container>
+                                    <input flex type="number" ng-model="rating.life" aria-label="blue" aria-controls="blue-slider">
+                                </md-input-container>
+                            </md-slider-container>
+
+                            安全感
+                            <md-slider-container>
+                                <md-slider flex ng-model="rating.safety" min="0" max="100" aria-label="blue">
+                                </md-slider>
+                                <md-input-container>
+                                    <input flex type="number" ng-model="rating.safety" aria-label="blue" aria-controls="blue-slider">
+                                </md-input-container>
+                            </md-slider-container>
+                            <md-switch ng-model="data.cb1" aria-label="Switch 1">
+                                更改后通知
+                            </md-switch>
+                        </div>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                            <md-button class="md-raised" ng-click="reset()">重置</md-button>
+                            <md-button class="md-raised md-primary">确认</md-button>
+                        </section>
+                    </md-content>
+                </md-tab>
+                <md-tab label="意见">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">意见</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat
+                            neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas
+                            lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat.
+                            Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                            Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies
+                            id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet
+                            vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula
+                            sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum
+                            neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus
+                            ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna.
+                            Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor
+                            tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi
+                            maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas
+                            facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus
+                            sapien sit amet, tempus sapien.</p>
+                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie
+                            dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere
+                            mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula
+                            diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    </md-content>
+                </md-tab>
+                <md-tab label="设置">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">设置</h1>
+                        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+                            <div>
+                                <h3>密码</h3>
+                                <md-input-container>
+                                    <label>密码</label>
+                                    <input ng-model="user.title">
+                                </md-input-container>
+
+                                <md-input-container>
+                                    <label>再次输入</label>
+                                    <input ng-model="user.email" type="email">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                            <md-button class="md-raised md-primary">确认</md-button>
+                        </section>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
     </div>
+
 
     <!-- Angular Material requires Angular.js Libraries -->
     <script src="./library/angular/angular.min.js"></script>
